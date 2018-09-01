@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  db:
+    image: mysql:5.7.22
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ecapp
+      MYSQL_USER: ecapp
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+
